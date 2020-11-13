@@ -1,0 +1,196 @@
+1. Product Management :
+
+Resource API
+MVSC : model View Controller Service
+
+domain : http://localhost:8000
+- List Product (include pagination )
+    * URI : /api/v1/product
+    * Method : GET
+    *Request : {domain}/api/v1/product?page=2&limit=4&column=id&sort=desc
+    * Response: 
+        success:
+            {
+                "status": true,
+                "code": 200,
+                "product": [
+                {
+                    "id": 71,
+                    "name": "bánh hùng anh",
+                    "id_type": 5,
+                    "description": "hùng anh đẹp trai",
+                    "unit_price": 210,
+                    "promotion_price": 200,
+                    "image": "crepe-chocolate.jpg",
+                    "unit": "hộp",
+                    "new": 0,
+                    "created_at": "2020-10-27T16:51:54.000000Z",
+                    "updated_at": "2020-10-27T16:51:54.000000Z"
+                },
+                {
+                    "id": 70,
+                    "name": "bánh hùng anh",
+                    "id_type": null,
+                    "description": null,
+                    "unit_price": null,
+                    "promotion_price": null,
+                    "image": null,
+                    "unit": null,
+                    "new": 0,
+                    "created_at": "2020-10-27T16:49:34.000000Z",
+                    "updated_at": "2020-10-27T16:49:34.000000Z"
+                }
+                ................................................
+                ................................................
+                ],
+                "meta": {
+                    "total": 70,
+                    "perPage": "2",
+                    "currentPage": 2,
+                    "lastPage": 35
+                }
+            }
+        faile: 
+            {
+               "status": false,
+                "code": 500,
+                "message": "Undefined property: App\\Http\\Controllers\\Api\\ProductsController::$produtService"
+            }    
+
+- Create product:
+    * URI : /api/v1/product
+    * Method : POST
+    *Request : 
+        {
+            "name": "bánh hùng anh",
+            "id_type": 5,
+            "description": "hùng anh đẹp trai",
+            "unit_price": 210,
+            "promotion_price": 200,
+            "image": "crepe-chocolate.jpg",
+            "unit": "hộp",
+            "new": 0,
+                    
+        }
+    * Response: 
+        success:
+            {
+                "status": true,
+                "code": 200,
+                "product": [
+                {
+                    "id": 71,
+                    "name": "bánh hùng anh",
+                    "id_type": 5,
+                    "description": "hùng anh đẹp trai",
+                    "unit_price": 210,
+                    "promotion_price": 200,
+                    "image": "crepe-chocolate.jpg",
+                    "unit": "hộp",
+                    "new": 0,
+                    "created_at": "2020-10-27T16:51:54.000000Z",
+                    "updated_at": "2020-10-27T16:51:54.000000Z"
+                },
+            }
+        faile: 
+            {
+               "status": false,
+                "code": 500,
+                "message": "Undefined property: App\\Http\\Controllers\\Api\\ProductsController::$produtService"
+            }    
+
+
+- Update product
+    * URI : /api/v1/product/{id}
+    * Method : PUT
+    *Request : 
+        {
+            "name": "bánh hùng anh",
+            "id_type": 5,
+            "description": "hùng anh đẹp trai",
+            "unit_price": 210,
+            "promotion_price": 200,
+            "image": "crepe-chocolate.jpg",
+            "unit": "hộp",
+            "new": 0,
+                    
+        }
+    * Response: 
+        success:
+            {
+                "status": true,
+                "code": 200,
+                "product": [
+                {
+                    "id": 71,
+                    "name": "bánh hùng anh",
+                    "id_type": 5,
+                    "description": "hùng anh đẹp trai",
+                    "unit_price": 210,
+                    "promotion_price": 200,
+                    "image": "crepe-chocolate.jpg",
+                    "unit": "hộp",
+                    "new": 0,
+                    "created_at": "2020-10-27T16:51:54.000000Z",
+                    "updated_at": "2020-10-27T16:51:54.000000Z"
+                },
+            }
+        faile: 
+            {
+               "status": false,
+                "code": 500,
+                "message": "Undefined property: App\\Http\\Controllers\\Api\\ProductsController::$produtService"
+            }    
+
+- get product by id
+    * URI : /api/v1/product/{id}
+    * Method : PUT
+    *Request : {domain}/api/v1/product/71
+    * Response: 
+        success:
+            {
+                "status": true,
+                "code": 200,
+                "product": [
+                {
+                    "id": 71,
+                    "name": "bánh hùng anh",
+                    "id_type": 5,
+                    "description": "hùng anh đẹp trai",
+                    "unit_price": 210,
+                    "promotion_price": 200,
+                    "image": "crepe-chocolate.jpg",
+                    "unit": "hộp",
+                    "new": 0,
+                    "created_at": "2020-10-27T16:51:54.000000Z",
+                    "updated_at": "2020-10-27T16:51:54.000000Z"
+                },
+            }
+        faile: 
+            {
+               "status": false,
+                "code": 500,
+                "message": "Undefined property: App\\Http\\Controllers\\Api\\ProductsController::$produtService"
+            }    
+
+-delete product:
+    * URI : /api/v1/product/{id}
+    * Method : DELETE
+    *Request : {domain}/api/v1/product/71
+    * Response: 
+        success:
+            {
+                "status": true,
+                "code": 200,
+            }
+        faile: 
+            {
+               "status": false,
+                "code": 500,
+                "message": "Undefined property: App\\Http\\Controllers\\Api\\ProductsController::$produtService"
+            }    
+
+
+
+
+
